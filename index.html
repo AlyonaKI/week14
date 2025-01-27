@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const grades = [];
+      console.log(grades);
+
+      for (i = 0; i < 12; i++) {
+        grades.push(Math.floor(Math.random() * 100));
+      }
+      console.log(grades);
+
+      const sum = grades.reduce((acc, grade) => acc + grade, 0);
+      const average = Math.round(sum / grades.length);
+      console.log(average);
+
+      const maxGrade = Math.max(...grades);
+      console.log(maxGrade);
+
+      const minGrade = Math.min(...grades);
+      console.log(minGrade);
+
+      const successfulStudents = grades.filter((grade) => grade >= 60);
+      console.log(successfulStudents);
+
+      const unsuccessfulStudents = grades.filter((grade) => grade < 60);
+      console.log(unsuccessfulStudents);
+
+      const letterGrades = grades.map((grade) => {
+        if (grade >= 80) return "A";
+        if (grade >= 60) return "B";
+        if (grade >= 40) return "C";
+        if (grade >= 20) return "D";
+        return "E";
+      });
+      console.log(letterGrades);
+    </script>
+  </body>
+</html>
